@@ -42,7 +42,7 @@ executeSSH() {
   done <<< $LINES
 
   echo "$COMMANDS"
-  ssh -o StrictHostKeyChecking=no -p ${INPUT_PORT:-22} $INPUT_USER@$INPUT_HOST "$COMMANDS"
+  ssh -o StrictHostKeyChecking=no -tt -p ${INPUT_PORT:-22} $INPUT_USER@$INPUT_HOST "$COMMANDS"
 }
 
 executeSCP() {
